@@ -167,13 +167,13 @@ function theming.set_nvim_colors(palette)
     ["@exception"] = { fg = palette.red },
 
 
-    ["@type"] = { fg = palette.cyan },
-    ["@type.builtin"] = { fg = palette.cyan },
-    ["@type.definition"] = { fg = palette.cyan },
+    ["@type"] = { fg = palette.yellow },
+    ["@type.builtin"] = { fg = palette.yellow },
+    ["@type.definition"] = { fg = palette.yellow },
     ["@type.qualifier"] = { fg = palette.blue },
     ["@storageclass"] = { fg = palette.yellow },
-    ["@attribute"] = { fg = palette.blue },
-    ["@field"] = { fg = palette.cyan },
+    ["@attribute"] = { fg = palette.red },
+    ["@field"] = { fg = palette.red },
     ["@property"] = { fg = palette.red },
 
 
