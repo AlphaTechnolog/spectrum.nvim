@@ -9,7 +9,7 @@ return {
 
   red = '#f04a73',
   green = '#36e0bb',
-  yellow = '#e9dd72',
+  yellow = '#fad874',
   blue = '#79acf8',
   magenta = '#aa79f8',
   cyan = '#79c5f8',
@@ -17,7 +17,7 @@ return {
 
   light_red = '#f26588',
   light_green = '#54e4c5',
-  light_yellow = '#ece287',
+  light_yellow = '#fad97a',
   light_blue = '#8db8f9',
   light_magenta = '#b68df9',
   light_cyan = '#8dcdf9',
