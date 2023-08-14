@@ -1,0 +1,25 @@
+return {
+  background = '#110f0f',
+  dark_background = '#100e0e',
+  light_background = '#1d1a1a',
+  lighter_background = '#2a2525',
+  black = '#373030',
+  light_black = '#413939',
+  lighter_black = '#746666',
+
+  red = '#f04a73',
+  green = '#87dc76',
+  yellow = '#fad874',
+  blue = '#7dace9',
+  magenta = '#847de9',
+  cyan = '#7dd3e9',
+  white = '#b5b5cd',
+
+  light_red = '#f26588',
+  light_green = '#8ddd7c',
+  light_yellow = '#fad97a',
+  light_blue = '#83b0ea',
+  light_magenta = '#8a83ea',
+  light_cyan = '#83d5ea',
+  light_white = '#a9a9c5',
+}
