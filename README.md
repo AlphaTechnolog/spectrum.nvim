@@ -5,7 +5,7 @@ is pretty much WIP
 
 # Included themes atm
 
-- refined decay (a new refined version im working for the [decay theme](https://github.com/decaycs))
+- rustic decay (a new rustic version im working for the [decay theme](https://github.com/decaycs))
 
 # Usage
 
@@ -19,7 +19,7 @@ Install fist with lazy.nvim or another package manager of your preference
     config = function ()
         require("spectrum").setup({
             theme = "decay", -- theme name
-            variant = "refined" -- don't pass if you want the "default" variant
+            variant = "rustic" -- don't pass if you want the "default" variant
         })
     end
 }
@@ -63,33 +63,33 @@ example for tokyonight:
 
 ```lua
 return {
-  background = '#0e1011',
-  dark_background = '#0d0f10',
-  light_background = '#181c1e',
-  lighter_background = '#23282b',
-  black = '#2e3538',
-  light_black = '#373f43',
-  lighter_black = '#373f43',
+  background = '#110f0f',
+  dark_background = '#100e0e',
+  light_background = '#1d1a1a',
+  lighter_background = '#2a2525',
+  black = '#373030',
+  light_black = '#413939',
+  lighter_black = '#746666',
 
   red = '#f04a73',
-  green = '#36e0bb',
-  yellow = '#e9dd72',
-  blue = '#79acf8',
-  magenta = '#aa79f8',
-  cyan = '#79c5f8',
+  green = '#87dc76',
+  yellow = '#fad874',
+  blue = '#7dace9',
+  magenta = '#847de9',
+  cyan = '#7dd3e9',
   white = '#b5b5cd',
 
   light_red = '#f26588',
-  light_green = '#54e4c5',
-  light_yellow = '#ece287',
-  light_blue = '#8db8f9',
-  light_magenta = '#b68df9',
-  light_cyan = '#8dcdf9',
+  light_green = '#8ddd7c',
+  light_yellow = '#fad97a',
+  light_blue = '#83b0ea',
+  light_magenta = '#8a83ea',
+  light_cyan = '#83d5ea',
   light_white = '#a9a9c5',
 }
 ```
 
-> That's the refined decay colors
+> Those are the rustic decay colors
 
 4. Test your theme!
 
