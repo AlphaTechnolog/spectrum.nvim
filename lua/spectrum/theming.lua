@@ -2,7 +2,17 @@ local util = require("spectrum.util")
 
 local theming = {}
 
-local function apply_highlights(highlights)
+local function apply_highlights(palette, highlights)
+  if palette.polish then
+    for key, value in pairs(palette.polish(palette)) do
+      highlights[key] = value
+    end
+  end
+
+  if palette.mode ~= nil then
+    vim.opt.background = palette.mode
+  end
+
   for highlight, payload in pairs(highlights) do
     vim.api.nvim_set_hl(0, highlight, payload)
   end
@@ -33,7 +43,7 @@ end
 
 function theming.set_nvim_colors(palette)
   palette = theming.create_shortcuts(palette)
-  apply_highlights {
+  apply_highlights(palette, {
     Normal = { fg = palette.foreground, bg = palette.background },
     StatusLine = { bg = palette.statusline_bg, fg = palette.foreground },
     StatusLineNC = { bg = palette.statusline_bg, fg = palette.white },
@@ -265,7 +275,7 @@ function theming.set_nvim_colors(palette)
     ["@lsp.typemod.variable.injected"] = { link = "@variable" },
 
 
-    LspTroubleText = { fg = palette.foreground },
+    LspTroubleText = { fg = palette.foreground, bg = palette.background },
     LspTroubleCount = { fg = palette.cyan, bg = palette.foreground },
     LspTroubleNormal = { fg = palette.foreground, bg = palette.background },
 
@@ -392,9 +402,9 @@ function theming.set_nvim_colors(palette)
 
     LspFloatWinNormal = { link = "Normal" },
 
-    healthError = { fg = palette.red },
-    healthSuccess = { fg = palette.blue },
-    healthWarning = { fg = palette.magenta },
+    healthError = { fg = palette.red, bg = palette.background },
+    healthSuccess = { fg = palette.blue, bg = palette.background },
+    healthWarning = { fg = palette.magenta, bg = palette.background },
 
     BufferLineIndicatorSelected = { fg = palette.blue },
     BufferLineFill = { fg = palette.foreground, bg = palette.dark_background },
@@ -406,20 +416,20 @@ function theming.set_nvim_colors(palette)
     BufferOffset = { fg = palette.background, bg = palette.background },
     BufferTabpageFill = { fg = palette.background, bg = palette.background },
 
-    DiagnosticError = { fg = palette.red },
-    DiagnosticWarn = { fg = palette.yellow },
-    DiagnosticInfo = { fg = palette.blue },
-    DiagnosticHint = { fg = palette.cyan },
-    DiagnosticVirtualTextError = { bg = util.darken(palette.red, 0.1), fg = palette.red },
-    DiagnosticVirtualTextWarn = { bg = util.darken(palette.yellow, 0.1), fg = palette.yellow },
-    DiagnosticVirtualTextInfo = { bg = util.darken(palette.blue, 0.1), fg = palette.blue },
-    DiagnosticVirtualTextHint = { bg = util.darken(palette.cyan, 0.15), fg = palette.cyan },
+    DiagnosticError = { fg = palette.red, bg = palette.background },
+    DiagnosticWarn = { fg = palette.yellow, bg = palette.background },
+    DiagnosticInfo = { fg = palette.blue, bg = palette.background },
+    DiagnosticHint = { fg = palette.cyan, bg = palette.background },
+    DiagnosticVirtualTextError = { bg = util.darken(palette.red, 0.1, palette.background), fg = palette.red },
+    DiagnosticVirtualTextWarn = { bg = util.darken(palette.yellow, 0.1, palette.background), fg = palette.yellow },
+    DiagnosticVirtualTextInfo = { bg = util.darken(palette.blue, 0.1, palette.background), fg = palette.blue },
+    DiagnosticVirtualTextHint = { bg = util.darken(palette.cyan, 0.15, palette.background), fg = palette.cyan },
 
     DiagnosticUnderlineError = { undercurl = true, sp = palette.red },
     DiagnosticUnderlineWarn = { undercurl = true, sp = palette.yellow },
     DiagnosticUnderlineInfo = { undercurl = true, sp = palette.blue },
     DiagnosticUnderlineHint = { undercurl = true, sp = palette.cyan },
-  }
+  })
 end
 
 return theming
